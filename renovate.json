@@ -1,0 +1,40 @@
+{
+    "extends": [
+        "config:base"
+    ],
+    "lockFileMaintenance": {
+        "enabled": true,
+        "automerge": true
+    },
+    "labels": [
+        "dependencies"
+    ],
+    "packageRules": [
+        {
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "groupName": "dependencies",
+            "reviewers": [
+                "rpdelaney",
+                "pancake-tongs"
+            ]
+        },
+        {
+            "automerge": true,
+            "groupName": "dependencies",
+            "matchUpdateTypes": [
+                "patch",
+                "pin",
+                "digest",
+                "minor"
+            ]
+        }
+    ],
+    "schedule": [
+        "every weekday",
+        "after 9am and before 5pm"
+    ],
+    "separateMinorPatch": false,
+    "timezone": "America/New_York"
+}
