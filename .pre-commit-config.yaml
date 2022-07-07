@@ -53,6 +53,13 @@ repos:
 
   - repo: local
     hooks:
+      - id: no-todo
+        name: TODOs in source control are not allowed
+        entry: '\bTODO\b|\btodo\b'
+        stages: [commit]
+        exclude: '.pre-commit.config.yaml'
+        language: pygrep
+
       - id: shellcheck
         name: shellcheck
         language: system
