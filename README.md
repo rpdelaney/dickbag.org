@@ -19,19 +19,21 @@ You need some stuff to work on this.
   committing garbage to the repo.
 - [poetry](https://python-poetry.org/) is a python dependency resolver and virtual environment manager.
 - [direnv](https://direnv.net/) allows directory-specific env var configuration.
+- [pyenv](https://github.com/pyenv/pyenv) manages python versions and lets us switch interpreters without
+  being chained to the crusty, out of date debian repos or whatever.
 
 ### Installation
 
 #### Archlinux
 
 ```console
-pacman -S python-pre-commit python-poetry direnv
+pacman -S python-pre-commit python-poetry direnv pyenv
 ```
 
 #### macOS
 
 ```console
-brew install pre-commit poetry direnv
+brew install pre-commit poetry direnv pyenv
 ```
 
 ### Setup
@@ -39,6 +41,8 @@ brew install pre-commit poetry direnv
 Enter the project repo, then:
 
 ```console
+$ pyenv install
+[...]
 $ direnv allow
 [...]
 $ pre-commit install --install-hooks
