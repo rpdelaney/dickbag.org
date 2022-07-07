@@ -43,6 +43,14 @@ repos:
     hooks:
       - id: doc8
 
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.14
+    hooks:
+      - id: mdformat
+        additional_dependencies:
+          - mdformat-gfm
+          - mdformat-toc
+
   - repo: local
     hooks:
       - id: shellcheck
