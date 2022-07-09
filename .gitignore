@@ -1,0 +1,38 @@
+.envrc.local
+
+# python
+*.py[cod]
+.cache
+.coverage
+.hypothesis
+.mypy_cache
+.pytest_cache
+.pythonrc.py
+.venv
+__pycache__
+pythonrc.py
+venv
+
+# temporary & state files
+*~
+*.un~
+*.BUP
+*.bak
+*.o
+*.sw[pon]
+*.tmp
+*.pid
+*.state
+*.tfstate
+
+# logs logs logs
+*.sqlite
+*.sqlite3
+*.log
+*.err
+*.error
+*.stderr
+*.stderror
+
+# "ide"
+.vscode/*
