@@ -51,6 +51,11 @@ repos:
           - mdformat-gfm
           - mdformat-toc
 
+  - repo: https://github.com/zricethezav/gitleaks
+    rev: v8.8.12
+    hooks:
+      - id: gitleaks
+
   - repo: local
     hooks:
       - id: no-todo
