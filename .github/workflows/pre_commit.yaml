@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up python
         id: setup-python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version-file: '.python-version'
 
@@ -27,7 +27,7 @@ jobs:
           installer-parallel: true
       - name: Load cached venv
         id: cached-poetry-dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
@@ -45,7 +45,7 @@ jobs:
       - name: Install pre-commit
         run: pip install pre-commit
       - name: cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           key: pre-commit-dot-cache-{{ checksum ".pre-commit-config.yaml" }}
           path: ~/.cache/pre-commit
